@@ -1,1 +1,52 @@
-Project description goes here. 
+# data
+
+# results
+
+# scripts
+## download_genomes.sh
+SLURM script to download gene annotation and reference genome of *Oryza sativa*
+
+## download_MtPt_genome.sh
+downloads Mitochondrial and Plastid DNA of *O sativa* genome
+
+## extract-genomic-features.sh
+Preliminary pipeline to extract genomic features from *Oryza sativa* genome.
+
+## keep_prim_annot.py
+Python script to filter only the primary annotations, defined as '-00' and '-01' in this particular genome
+Copied from data
+
+## count_kmers.sh
+SLURM script to count k-mers of intergenic, CDS, reference genome, and repbase
+
+## make_matrix.sh  
+SLURM script to make figures in R for kmer_CDS* and kmer_repbase*
+Organizing files to make matrices for different K-mers 5-20
+Used later for determining the best K
+
+## make_matrix.R
+R script for make_matrix.sh
+Configurations of the table can be found in this file
+
+## plot_gen_elements.R
+R script to plot figures in determining the best k
+
+## 50_accessions.sh
+Chosen 50 random accessions to work on
+Note: Gshuf does not work on biocluster; use shuf on biocluster instead
+
+## pipeline_final.sh
+Download genomes on database and create K-mers (12- and 14-mer) per resequenced accession
+
+## accession_filenames.sh
+Creates all DNA-IDs/filenames for the chosen 50 accessions into one .txt file
+
+## combining_files.sh
+Concatenates all k-mers of all resequences according into one file respective to DNA-ID or filename
+Used in conjunction with aggregate_50_acc.sh
+
+## aggregate_50_acc.sh
+Aggregates concatenated files from combining_files.sh
+
+## post_processing_edited.sh
+Combines all aggregated files into a big table
