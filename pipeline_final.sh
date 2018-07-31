@@ -75,11 +75,11 @@ bedtools bamtofastq -i $TEMP_DIR/"$NAME".unmapped.bam -fq $TEMP_DIR/"$NAME".unma
 
 # Count 12-mers
 jellyfish count -C -m 12 -s 3G -t 8 -o $TEMP_DIR/"$NAME".jf $TEMP_DIR/"$NAME".unmapped.fq
-jellyfish dump -tc $TEMP_DIR/"$NAME".jf > $RESULTSDIR/K-merCounts/all/whole_genome/"$NAME"_12.txt
+jellyfish dump -tc $TEMP_DIR/"$NAME".jf > $RESULTSDIR/K-merCounts/all/whole_genome/pipeline_kmer/"$NAME"_12.txt
 
 # Count 14-mers  
 jellyfish count -C -m 14 -s 3G -t 8 -o $TEMP_DIR/"$NAME".jf $TEMP_DIR/"$NAME".unmapped.fq 
-jellyfish dump -tc $TEMP_DIR/"$NAME".jf > $RESULTSDIR/K-merCounts/all/whole_genome/"$NAME"_14.txt
+jellyfish dump -tc $TEMP_DIR/"$NAME".jf > $RESULTSDIR/K-merCounts/all/whole_genome/pipeline_kmer/"$NAME"_14.txt
 
 # clean up
 rm -r $TEMP_DIR
