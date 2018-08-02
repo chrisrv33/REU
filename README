@@ -50,3 +50,21 @@ Aggregates concatenated files from combining_files.sh
 
 ## post_processing_edited.sh
 Combines all aggregated files into a big table
+
+##annot_mers_gc_content.sh
+Uploads latest version of python (v3), creates new envt, then runs *.py file of the same name
+
+##annot_mers_gc_content.py
+Calculate score for K-mers and append to beginning of line
+
+##Normalize.R
+Normalize raw counts to count per million
+
+##Normalize.sh
+Shell script to run Normalize.R 
+
+##GC_correct.R
+GC-correcting normalized data table using the "binning approach"
+
+##GC_correct.sh
+Shell script to run GC_correct.R
