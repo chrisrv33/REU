@@ -51,29 +51,56 @@ Aggregates concatenated files from combining_files.sh
 ## post_processing_edited.sh
 Combines all aggregated files into a big table
 
-##annot_mers_gc_content.sh
+## annot_mers_gc_content.sh
 Uploads latest version of python (v3), creates new envt, then runs *.py file of the same name
 
-##annot_mers_gc_content.py
+## annot_mers_gc_content.py
 Calculate score for K-mers and append to beginning of line
 
-##Normalize.R
+## Normalize.R
 Normalize raw counts to count per million
 
-##Normalize.sh
+## Normalize.sh
 Shell script to run Normalize.R 
 
-##GC_correct.R
+## GC_correct.R
 GC-correcting normalized data table using the "binning approach"
 
-##GC_correct.sh
+## GC_correct.sh
 Shell script to run GC_correct.R
 
-##calc_GC.py
+## calc_GC.py
 Python script that calculates GC-content for both raw and GC-corrected data tables.
 
-##calc_GC_raw.sh
+## calc_GC_raw.sh
 Bash shell to run calc_GC.py with raw aggregated data tables; be wary of file location.
 
-##calc_GC_corr.sh
+## calc_GC_corr.sh
 Bash shell to run calc_GC.py with GC-corrected data tables.
+
+## 12mer_diff_GC_content.R
+Creates a density plot comparing pre- and post-GC-correction for 12-mers. Uses *.sh to run into the cluster.
+
+## 12mer_diff_GC_content.sh
+Uses *.R to run the script
+
+## 14mer_diff_GC_content.R
+Creates a density plot comparing pre- and post-GC-correction for 14-mers. Uses *.sh to run into the cluster.
+
+## 14mer_diff_GC_content.sh
+Uses *.R to run the script
+
+## extract_admix.sh
+Extract rice accession names and their corresponding admixture groups
+
+## PCA_12mer.R
+Creates a PCA scatter plot for 12mers. Uses *.sh to run into the cluster.
+
+## PCA_12mer.sh
+Uses *.R to run the script
+
+## PCA_14mer.R
+Creates a PCA scatter plot for 14mers. Uses *.sh to run into the cluster.
+
+## PCA_14mer.sh
+Uses *.R to run the script
