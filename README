@@ -3,6 +3,9 @@
 # results
 
 # scripts
+
+### BEST K-MER ###
+
 ## download_genomes.sh
 SLURM script to download gene annotation and reference genome of *Oryza sativa*
 
@@ -14,7 +17,7 @@ Preliminary pipeline to extract genomic features from *Oryza sativa* genome.
 
 ## keep_prim_annot.py
 Python script to filter only the primary annotations, defined as '-00' and '-01' in this particular genome
-Copied from data
+Copied from CF's data
 
 ## count_kmers.sh
 SLURM script to count k-mers of intergenic, CDS, reference genome, and repbase
@@ -31,6 +34,8 @@ Configurations of the table can be found in this file
 ## plot_gen_elements.R
 R script to plot figures in determining the best k
 
+### MAJOR PIPELINE ###
+
 ## 50_accessions.sh
 Chosen 50 random accessions to work on
 Note: Gshuf does not work on biocluster; use shuf on biocluster instead
@@ -40,6 +45,8 @@ Download genomes on database and create K-mers (12- and 14-mer) per resequenced 
 
 ## accession_filenames.sh
 Creates all DNA-IDs/filenames for the chosen 50 accessions into one .txt file
+
+### AGGREGATES ###
 
 ## combining_files.sh
 Concatenates all k-mers of all resequences according into one file respective to DNA-ID or filename
@@ -51,11 +58,15 @@ Aggregates concatenated files from combining_files.sh
 ## post_processing_edited.sh
 Combines all aggregated files into a big table
 
-## annot_mers_gc_content.sh
-Uploads latest version of python (v3), creates new envt, then runs *.py file of the same name
+### GC-CONTENT ### 
 
 ## annot_mers_gc_content.py
 Calculate score for K-mers and append to beginning of line
+
+## annot_mers_gc_content.sh
+Uploads latest version of python (v3), creates new envt, then runs *.py file
+
+### NORMALIZATION & GC CORRECTION ###
 
 ## Normalize.R
 Normalize raw counts to count per million
@@ -78,6 +89,8 @@ Bash shell to run calc_GC.py with raw aggregated data tables; be wary of file lo
 ## calc_GC_corr.sh
 Bash shell to run calc_GC.py with GC-corrected data tables.
 
+### GC CORRECTION COMPARISON ###
+
 ## 12mer_diff_GC_content.R
 Creates a density plot comparing pre- and post-GC-correction for 12-mers. Uses *.sh to run into the cluster.
 
@@ -89,6 +102,8 @@ Creates a density plot comparing pre- and post-GC-correction for 14-mers. Uses *
 
 ## 14mer_diff_GC_content.sh
 Uses *.R to run the script
+
+### PRINCIPAL COMPONENT ANALYSIS ###
 
 ## extract_admix.sh
 Extract rice accession names and their corresponding admixture groups
