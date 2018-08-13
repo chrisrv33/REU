@@ -34,7 +34,7 @@ Configurations of the table can be found in this file
 ## plot_gen_elements.R
 R script to plot figures in determining the best k
 
-### MAJOR PIPELINE ###
+### INITIAL PIPELINE ###
 
 ## 50_accessions.sh
 Chosen 50 random accessions to work on
@@ -109,13 +109,29 @@ Uses *.R to run the script
 Extract rice accession names and their corresponding admixture groups
 
 ## PCA_12mer.R
+Obsolete. Refer to PCA_calc_12mer.* and PCA_plots_12mer* for updated version.
 Creates a PCA scatter plot for 12mers. Uses *.sh to run into the cluster.
 
 ## PCA_12mer.sh
-Uses *.R to run the script
+Uses updated versions of R (PCA_calc*) to run the script
 
 ## PCA_14mer.R
+Obsolete. Refer to PCA_calc_14mer.* and PCA_plots_14mer* for updated version.
 Creates a PCA scatter plot for 14mers. Uses *.sh to run into the cluster.
 
 ## PCA_14mer.sh
-Uses *.R to run the script
+Uses updated versions of R (PCA_calc*) to run the script
+
+## PCA_plots_12mer.R
+R script to create scree plot and PCA plot. Loading figure separate due to big data processing.
+
+## PCA_loading_12mer.R
+R script to create loading plot
+
+## PCA_plots_12mer.sh
+Runs *.R of the same filename
+
+### POST HOC ANALYSIS ###
+
+## 1000_12mers.R ; *.sh
+Extracts the 1000 most variable K-mers from the loadings
