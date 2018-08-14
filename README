@@ -128,11 +128,11 @@ Uses updated versions of R (PCA_calc*) to run the script
 ## PCA_plots_12mer.R
 R script to create scree plot and PCA plot. Loading figure separate due to big data processing.
 
-## PCA_loading_12mer.R
-R script to create loading plot
-
 ## PCA_plots_12mer.sh
 Runs *.R of the same filename
+
+## PCA_loading_12mer.R, *.sh
+R script and bash shell to create loading plot
 
 ### POST HOC ANALYSIS ###
 
