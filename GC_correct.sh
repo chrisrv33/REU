@@ -10,6 +10,6 @@
 #SBATCH --job-name="gcc12"
 #SBATCH -p koeniglab
 
-R=/rhome/cvaldez/bigdata/REU/scripts/GC_correct.R
+R=/rhome/cvaldez/bigdata/REU/scripts/norm_gc_correction/GC_correct.R
 
 Rscript $R 
