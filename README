@@ -89,6 +89,9 @@ Bash shell to run calc_GC.py with raw aggregated data tables; be wary of file lo
 ## calc_GC_corr.sh
 Bash shell to run calc_GC.py with GC-corrected data tables.
 
+## calc_GC_reference.sh
+Bash shell script to determine value for reference genome; value added in R scripts.
+
 ### GC CORRECTION COMPARISON ###
 
 ## 12mer_diff_GC_content.R
