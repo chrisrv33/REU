@@ -14,6 +14,6 @@ cd ../data
 
 for i in kmer_CDS_ kmer_intergenic_ kmer_reference_ kmer_repbase_
 do
-	Rscript ../scripts/make_matrix.R "$i" 
+	Rscript ../scripts/best_kmer/make_matrix.R "$i" 
 		
 done 
