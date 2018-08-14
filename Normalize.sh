@@ -10,7 +10,7 @@
 #SBATCH --job-name="norm"
 #SBATCH -p koeniglab
 
-R=/rhome/cvaldez/bigdata/REU/scripts/Normalize.R
+R=/rhome/cvaldez/bigdata/REU/scripts/norm_gc_correction/Normalize.R
 
 
 Rscript $R
