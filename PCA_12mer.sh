@@ -10,6 +10,6 @@
 #SBATCH --job-name="pca12"
 #SBATCH -p koeniglab
 
-R=/rhome/cvaldez/bigdata/REU/scripts/PCA_12mer.R
+R=/rhome/cvaldez/bigdata/REU/scripts/pca/PCA_12mer.R
 
 Rscript $R 
