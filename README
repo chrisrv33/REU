@@ -4,7 +4,9 @@
 
 # scripts
 
+##################
 ### BEST K-MER ###
+##################
 
 ## download_genomes.sh
 SLURM script to download gene annotation and reference genome of *Oryza sativa*
@@ -34,7 +36,9 @@ Configurations of the table can be found in this file
 ## plot_gen_elements.R
 R script to plot figures in determining the best k
 
+########################
 ### INITIAL PIPELINE ###
+########################
 
 ## 50_accessions.sh
 Chosen 50 random accessions to work on
@@ -42,11 +46,14 @@ Note: Gshuf does not work on biocluster; use shuf on biocluster instead
 
 ## pipeline_final.sh
 Download genomes on database and create K-mers (12- and 14-mer) per resequenced accession
+*pipeline_final_all.sh used for downloading ALL genomes
 
 ## accession_filenames.sh
 Creates all DNA-IDs/filenames for the chosen 50 accessions into one .txt file
 
+##################
 ### AGGREGATES ###
+##################
 
 ## combining_files.sh
 Concatenates all k-mers of all resequences according into one file respective to DNA-ID or filename
@@ -58,7 +65,9 @@ Aggregates concatenated files from combining_files.sh
 ## post_processing_edited.sh
 Combines all aggregated files into a big table
 
+##################
 ### GC-CONTENT ### 
+##################
 
 ## annot_mers_gc_content.py
 Calculate score for K-mers and append to beginning of line
@@ -66,7 +75,9 @@ Calculate score for K-mers and append to beginning of line
 ## annot_mers_gc_content.sh
 Uploads latest version of python (v3), creates new envt, then runs *.py file
 
+#####################################
 ### NORMALIZATION & GC CORRECTION ###
+#####################################
 
 ## Normalize.R
 Normalize raw counts to count per million
@@ -92,7 +103,9 @@ Bash shell to run calc_GC.py with GC-corrected data tables.
 ## calc_GC_reference.sh
 Bash shell script to determine value for reference genome; value added in R scripts.
 
+################################
 ### GC CORRECTION COMPARISON ###
+################################
 
 ## 12mer_diff_GC_content.R
 Creates a density plot comparing pre- and post-GC-correction for 12-mers. Uses *.sh to run into the cluster.
@@ -106,7 +119,9 @@ Creates a density plot comparing pre- and post-GC-correction for 14-mers. Uses *
 ## 14mer_diff_GC_content.sh
 Uses *.R to run the script
 
+####################################
 ### PRINCIPAL COMPONENT ANALYSIS ###
+####################################
 
 ## extract_admix.sh
 Extract rice accession names and their corresponding admixture groups
@@ -134,7 +149,32 @@ Runs *.R of the same filename
 ## PCA_loading_12mer.R, *.sh
 R script and bash shell to create loading plot
 
+#########################
 ### POST HOC ANALYSIS ###
+#########################
 
 ## 1000_12mers.R ; *.sh
 Extracts the 1000 most variable K-mers from the loadings
+
+## aln_kmers.sh
+Aligns top 1K 12mers to the reference genome.
+
+## aln_kmers_random.sh
+Aligns random 1k 12mers to the reference genome.
+
+## plot_bam_density_looped.R
+Plots counts of k-mers (top1K and random1K) per chromosome
+
+## 001_assign_sequence_score_pipe.py
+Script to use Kmer table to calculate median values for a genomic sequence
+Runs in conjunction with 1_run.sh 
+DK's and CF's script
+
+## 2_merge.py
+Combines median values from 001_assign_seq...
+
+## calc_var.R
+Calculates variance for each abundance, then sorts from highest to lowest variance
+
+## boxdens.R
+Creates density plot for genes vs repeats and boxplot for repeat annotations
