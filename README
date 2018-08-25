@@ -178,3 +178,6 @@ Calculates variance for each abundance, then sorts from highest to lowest varian
 
 ## boxdens.R
 Creates density plot for genes vs repeats and boxplot for repeat annotations
+
+## loadingsbox
+Creates boxplot for repeat classes and PC1 Loadings
