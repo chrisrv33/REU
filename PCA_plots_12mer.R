@@ -48,19 +48,22 @@ PC2<-round(pvar.t[[2,2]], digits=1)
   
 # PCA with dashes
 pca.d<- ggplot(raw.f, aes(V1, V2)) +
-  geom_point(aes(colour = admixture)) + theme_minimal () + 
-  scale_color_brewer("Admixture group", palette = "Paired") +
-  theme(text = element_text(size=14), panel.grid.minor = element_blank()) +
-  geom_hline(yintercept=0, linetype="dashed") +
-  geom_vline(xintercept=0, linetype="dashed") +
+  geom_point(aes(colour = admixture), size=7) + theme_minimal () + 
+  scale_color_manual("Admixture group", values = c("#cab2d6","#6a3d9a", "#ffff99",  "#a6cee3",
+                                                   "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00")) + 
+  theme(text = element_text(size=30), axis.text = element_text(size = 25), panel.grid.minor = element_blank(),
+        panel.grid.major = element_line(colour = "grey70"), legend.key = element_rect(size = 7, color='white'),
+        legend.key.size = unit(0.5, 'in')) +
+  geom_hline(yintercept=0, linetype="dashed", size=1.5) +
+  geom_vline(xintercept=0, linetype="dashed", size=1.5) +
   xlab(paste("PC1 (",PC1, "%)", sep = "" )) + # create label for x-axis 
-  ylab(paste("PC2 (",PC2, "% )", sep = "" )) # for y-axis
+  ylab(paste("PC2 (",PC2, "% )\n", sep = "" )) # for y-axis
 
 print(pca.d)
 
 ggsave("/rhome/cvaldez/results/pca.plots/12mer PCA dashed.png", pca.d)
 
-# Create PCA without dashes
+# Create PCA without dashes (not used in poster)
 pca<- ggplot(raw.f, aes(V1, V2)) +
   geom_point(aes(colour = admixture)) + theme_classic () + 
   scale_color_brewer("Admixture group", palette = "Paired") +
