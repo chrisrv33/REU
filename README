@@ -106,17 +106,11 @@ Bash shell script to determine value for reference genome; value added in R scri
 ### GC CORRECTION COMPARISON ###
 ################################
 
-## 12mer_diff_GC_content.R
+## 12mer_diff_GC_content.R; *.sh
 Creates a density plot comparing pre- and post-GC-correction for 12-mers. Uses *.sh to run into the cluster.
 
-## 12mer_diff_GC_content.sh
-Uses *.R to run the script
-
-## 14mer_diff_GC_content.R
+## 14mer_diff_GC_content.R; *.sh
 Creates a density plot comparing pre- and post-GC-correction for 14-mers. Uses *.sh to run into the cluster.
-
-## 14mer_diff_GC_content.sh
-Uses *.R to run the script
 
 ####################################
 ### PRINCIPAL COMPONENT ANALYSIS ###
