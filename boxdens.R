@@ -1,6 +1,7 @@
 
 library("ggplot2")
 library(plyr)
+library(scales)
 
 raw<-read.table("gene_names.txt")
 raw$V2="gene"
@@ -39,11 +40,12 @@ ggsave("density.tiff", plot , width = 9.5, height = 5.5, units = "in" )
 # Boxplot
 repeats<-m[m$V3 == "repeats", ]
 
-box<-ggplot(repeats, aes(y=log(variance), x=reorder (annotation, log(variance), FUN = median))) + 
-  geom_boxplot(color="darkslategray", fill="darkseagreen3", outlier.size = 1, alpha=0.85) + theme_minimal() + theme(text=element_text(size=23), axis.text = element_text(size = 15), 
+box<-ggplot(repeats, aes(y=log10(variance), x=reorder (annotation, variance, FUN = median))) + 
+  geom_boxplot(color="steelblue4", fill="steelblue3", outlier.size = 1, alpha=0.85) + theme_classic() + 
+  theme(text=element_text(size=29), axis.text = element_text(size = 20),  panel.grid.major.x=element_line("grey85"),
                                            panel.grid.minor.x=element_blank(), panel.grid.major.y=element_blank(), 
-                                           panel.grid.minor.y=element_blank(), axis.text.x = element_text(angle = 60, hjust = 1)) + 
-  xlab("Annotated Repeats")
+                                           panel.grid.minor.y=element_blank(), axis.text.x = element_text(angle = 50, hjust = 1)) + 
+  xlab("Repeat Class") + ylab("Variance") + scale_y_continuous(labels=math_format()) 
   
 print (box)
 ggsave("repeats.png", box, width = 8.65, height = 7.5, units = "in")
