@@ -127,8 +127,9 @@ Creates a PCA scatter plot for 12mers. Uses *.sh to run into the cluster.
 Uses updated versions of R (PCA_calc*) to run the script
 
 ## PCA_14mer.R
-Obsolete. Refer to PCA_calc_14mer.* and PCA_plots_14mer* for updated version.
+Obsolete. Refer to PCA_calc_14mer.* for updated version.
 Creates a PCA scatter plot for 14mers. Uses *.sh to run into the cluster.
+Not working d/t big dataset. 
 
 ## PCA_14mer.sh
 Uses updated versions of R (PCA_calc*) to run the script
@@ -172,5 +173,5 @@ Calculates variance for each abundance, then sorts from highest to lowest varian
 ## boxdens.R
 Creates density plot for genes vs repeats and boxplot for repeat annotations
 
-## loadingsbox
+## loadingsbox.R
 Creates boxplot for repeat classes and PC1 Loadings
